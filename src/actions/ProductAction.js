@@ -7,6 +7,7 @@ import {
 }
   from '../constants/ProductConstant';
 
+
 export const fetchSimsRequest =()=>({
   type:FETCH_SIMS_REQUEST,
 });
@@ -37,7 +38,7 @@ export const fetchSims = () => {
   return async (dispatch) => {
     dispatch(fetchSimsRequest());
     try {
-      const response = await fetch("https://redux-backend.onrender.com/");
+      const response = await fetch(process.env.REACT_APP_BACKEND_URL + "dashboard");
       const data = await response.json();
       dispatch(fetchSimsSuccess(data));
     } catch (error) {
@@ -50,7 +51,7 @@ export const trashSims = () => {
   return async (dispatch) => {
     dispatch(fetchSimsRequest());
     try {
-      const response = await fetch("http://127.0.0.1:8000/trashsim/");
+      const response = await fetch(process.env.REACT_APP_BACKEND_URL + "trashsim/");
       const data = await response.json();
       dispatch(fetchSimsSuccess(data));
     } catch (error) {

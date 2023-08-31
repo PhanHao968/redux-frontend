@@ -20,7 +20,7 @@ const UpdateProduct = () => {
 		e.preventDefault();
 		console.log(updateProductInfo)
 
-		const url = "http://localhost:8000/updateproduct/" + updateProductInfo['simId']
+		const url = process.env.REACT_APP_BACKEND_URL + "updateproduct/" + updateProductInfo['simId']
 
 		const response = await fetch(url, {
 				method: 'PUT',

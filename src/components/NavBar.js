@@ -38,7 +38,7 @@ const NavBar = () => {
     const filterSims = async (e) => {
         e.preventDefault();
         try{
-            const response = await fetch(`http://localhost:8000/search/?prefix=${searchSim}`);
+            const response = await fetch(process.env.REACT_APP_BACKEND_URL + `search/?prefix=${searchSim}`);
             const data = await response.json()
             if(data.matching_phone_numbers && data.matching_phone_numbers.length > 0){
                 dispatch(fetchSimsSuccess(data.matching_phone_numbers));

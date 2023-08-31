@@ -21,7 +21,7 @@ const TrashTable = () => {
 
     const handleRestoreClick = async (id) => {
         try {
-            const response = await fetch(`http://localhost:8000/restore/${id}`, {
+            const response = await fetch(process.env.REACT_APP_BACKEND_URL + `restore/${id}`, {
                 method: "PUT",
                 headers: {
                     accept: 'application/json'
@@ -52,7 +52,7 @@ const TrashTable = () => {
     const handleDelete = async (id) => {
 
         try {
-            const response = await fetch(`http://localhost:8000/product/${id}`, {
+            const response = await fetch(process.env.REACT_APP_BACKEND_URL + `product/${id}`, {
                 method: "DELETE",
                 headers: {
                     accept: 'application/json'

@@ -22,7 +22,7 @@ const AddProducts=()=>{
         e.preventDefault();
         console.log(simsInfor)
 
-        const url = "http://localhost:8000/addproducts/"
+        const url = process.env.REACT_APP_BACKEND_URL + "addproducts/"
 
         const response = await fetch(
             url, {

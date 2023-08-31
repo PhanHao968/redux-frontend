@@ -24,7 +24,7 @@ const ProductsTable = () => {
     const handleDelete = async (id) => {
 
         try {
-            const response = await fetch(`http://localhost:8000/destroy/${id}`, {
+            const response = await fetch(process.env.REACT_APP_BACKEND_URL + `destroy/${id}`, {
                 method: "DELETE",
                 headers: {
                     accept: 'application/json'
