@@ -37,7 +37,7 @@ export const fetchSims = () => {
   return async (dispatch) => {
     dispatch(fetchSimsRequest());
     try {
-      const response = await fetch("http://127.0.0.1:8000/");
+      const response = await fetch("https://redux-backend.onrender.com/");
       const data = await response.json();
       dispatch(fetchSimsSuccess(data));
     } catch (error) {
