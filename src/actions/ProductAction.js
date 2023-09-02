@@ -39,6 +39,7 @@ export const fetchSims = () => {
     dispatch(fetchSimsRequest());
     try {
       const response = await fetch(process.env.REACT_APP_BACKEND_URL + "dashboard");
+      console.log("url/3000:",response)
       const data = await response.json();
       dispatch(fetchSimsSuccess(data));
     } catch (error) {
